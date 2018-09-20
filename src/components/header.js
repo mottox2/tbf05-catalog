@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: 'rebeccapurple',
+      background: '#4caf50',
       marginBottom: '1.45rem',
     }}
   >
@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0, fontWeight: 600 }}>
         <Link
           to="/"
           style={{
@@ -26,6 +26,13 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <p style={{
+        margin: '4px 0 0 0',
+        color: 'white'
+      }}>
+        当サイトは技術書典5の<a href="https://techbookfest.org/event/tbf05/circle">サークルリスト</a>から頒布物情報をまとめた非公式サイトです。 <br/>
+        問い合わせは<a href="https://twitter.com/mottox2">@mottox2</a>まで。
+      </p>
     </div>
   </div>
 )

@@ -13,7 +13,7 @@ const truncate = (str, length) => {
 const IndexPage = (props) => (
   <Layout>
     {props.data.allProduct.edges.map((product) => {
-      return <div style={{ marginBottom: 12 }}>
+      return <div style={{ marginBottom: 16 }}>
         <div style={{ fontWeight: 600 }}>{product.node.name}</div>
         <div>
           {product.node.description &&
