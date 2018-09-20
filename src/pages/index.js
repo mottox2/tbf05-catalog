@@ -25,6 +25,7 @@ query {
         id
         name
         circle {
+          id
           name
         }
       }
