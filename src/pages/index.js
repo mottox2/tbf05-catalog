@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import LazyLoad from 'react-lazyload'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
 
@@ -11,11 +12,28 @@ const truncate = (str, length) => {
   return str.substring(0, length) + '...';
 }
 
+const Product = styled.div`
+  margin-bottom: 16px;
+  display: flex;
+
+  @media screen and (max-width: 766px) {
+    flex-direction: column-reverse;
+  }
+`
+
+const ImageColunn = styled.div`
+  margin-left: auto;
+  @media screen and (max-width: 766px) {
+    margin-left: initial;
+    align-self: center;
+  }
+`
+
 const IndexPage = (props) => (
   <Layout>
     {props.data.allProduct.edges.map((product) => {
       const image = product.node.images && product.node.images[0]
-      return <div key={product.id} style={{ marginBottom: 16, display: 'flex' }}>
+      return <Product key={product.id}>
         <div style={{ marginRight: 12 }}>
           <div style={{ fontWeight: 600 }}>{product.node.name}</div>
           <div>
@@ -30,18 +48,18 @@ const IndexPage = (props) => (
           </a>
         </div>
         { image && <ProductImage image={image} alt={product.node.name} /> }
-      </div>
+      </Product>
     })}
   </Layout>
 )
 
 const ProductImage = ({ image, alt }) => {
   const height = 200 * image.height / image.width
-  return <div style={{ marginLeft: 'auto' }}> 
+  return <ImageColunn>
     <LazyLoad height={200}>
       <img width={200} height={height} style={{ objectFit: 'cover', minWidth: 200 }} src={image.url} alt={alt}/>
     </LazyLoad>
-  </div>
+  </ImageColunn>
 }
 
 export const query = graphql`
