@@ -21,7 +21,7 @@ const Product = styled.div`
   }
 `
 
-const ImageColunn = styled.div`
+const ImageColumn = styled.div`
   margin-left: auto;
   @media screen and (max-width: 766px) {
     margin-left: initial;
@@ -33,7 +33,7 @@ const IndexPage = (props) => (
   <Layout>
     {props.data.allProduct.edges.map((product) => {
       const image = product.node.images && product.node.images[0]
-      return <Product key={product.id}>
+      return <Product key={product.node.id}>
         <div style={{ marginRight: 12 }}>
           <div style={{ fontWeight: 600 }}>{product.node.name}</div>
           <div>
@@ -55,11 +55,11 @@ const IndexPage = (props) => (
 
 const ProductImage = ({ image, alt }) => {
   const height = 200 * image.height / image.width
-  return <ImageColunn>
+  return <ImageColumn style={{ minWidth: 200, height: height }}>
     <LazyLoad height={200}>
       <img width={200} height={height} style={{ objectFit: 'cover', minWidth: 200 }} src={image.url} alt={alt}/>
     </LazyLoad>
-  </ImageColunn>
+  </ImageColumn>
 }
 
 export const query = graphql`
