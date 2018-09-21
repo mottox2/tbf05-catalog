@@ -5,14 +5,14 @@ const Header = ({ siteTitle }) => (
   <div
     style={{
       background: '#4caf50',
-      marginBottom: '1.45rem',
+      marginBottom: '1rem',
     }}
   >
     <div
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        padding: '1.2rem 1rem',
       }}
     >
       <h1 style={{ margin: 0, fontWeight: 600 }}>
@@ -26,13 +26,6 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <p style={{
-        margin: '4px 0 0 0',
-        color: 'white'
-      }}>
-        当サイトは技術書典5の<a href="https://techbookfest.org/event/tbf05/circle">サークルリスト</a>から頒布物情報をまとめた非公式サイトです。 <br/>
-        問い合わせは<a href="https://twitter.com/mottox2">@mottox2</a>まで。
-      </p>
     </div>
   </div>
 )
