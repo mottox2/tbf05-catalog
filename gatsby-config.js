@@ -7,7 +7,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
+        name: '技術書典5カタログ',
         short_name: 'starter',
         start_url: '/',
         background_color: '#4caf50',
