@@ -106,4 +106,5 @@ query {
 }
 `
 
-export default IndexPage
+export default () => <p>公開停止しました</p>
+
